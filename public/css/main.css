@@ -1,0 +1,21 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+#main-wrap{
+  width: 990px;  
+  
+}
+#micexClearedChart{
+  height: 500px;
+}
+.params-table, .result-table{
+  margin-top: 20px;
+  border-collapse: separate;
+  border-spacing: 10px 5px;
+  width: 100%;
+}

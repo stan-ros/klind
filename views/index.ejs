@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="klindApp">
+    
+    <head>
+        <title>Klind</title>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.14/angular.min.js"></script>
+        <link rel='stylesheet' href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+        <link rel='stylesheet' href='/css/main.css' />
+        <script type="text/javascript" src="/js/charts.js"></script>
+        <script type="text/javascript" src="/angular/klind.js"></script>
+    </head>
+    
+    <body>
+        <div id="main-wrap" class="center-block" ng-controller="MicexClearedCtrl">
+            <h1 class="text-center">Micex Cleared</h1>
+            <table class="params-table">
+                <tr>
+                    <td>Money Amount (mlns):</td>
+                    <td>
+                        <input type="number" step="any" ng-model="moneyAmount" ng-change="updateValues()">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Micex Value:</td>
+                    <td>
+                        <input type="number" ng-model="lastMicex" ng-change="updateValues()">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Micex Cleared:</td>
+                    <td>{{currentMicexCleared.toFixed(2)}}</td>
+                    <td>Micex Cleared Min:</td>
+                    <td>
+                        <input type="number" ng-model="MICEX_CLEARED_MIN" disabled ng-change="updateValues()">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Allowed Multiplier:</td>
+                    <td>{{allowedMultiplier.toFixed(2)}}</td>
+                </tr>
+            </table>
+            <h2 class="text-center">Expected Money</h2>
+            <table class="result-table">
+                <thead>
+                    <tr>
+                        <th>Period</th>
+                        <th>Min</th>
+                        <th>Expected</th>
+                        <th>Max</th>
+                    </tr>    
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>6 months</td>
+                        <td>{{currentMicexCleared| micexClear: this: 'min': 6}}</td>
+                        <td>{{currentMicexCleared| micexClear: this: 'expected': 6}}</td>
+                        <td>{{currentMicexCleared| micexClear: this: 'max': 6}}</td>
+                    </tr>       
+                    <tr>
+                        <td>12 months</td>
+                        <td>{{currentMicexCleared| micexClear: this: 'min': 12}}</td>
+                        <td>{{currentMicexCleared| micexClear: this: 'expected': 12}}</td>
+                        <td>{{currentMicexCleared| micexClear: this: 'max': 12}}</td>
+                    </tr>       
+                    <tr>
+                        <td>24 months</td>
+                        <td>{{currentMicexCleared| micexClear: this: 'min': 24}}</td>
+                        <td>{{currentMicexCleared| micexClear: this: 'expected': 24}}</td>
+                        <td>{{currentMicexCleared| micexClear: this: 'max': 24}}</td>
+                    </tr>       
+                </tbody>
+            </table>
+            <div id="micexClearedChart"></div>
+        </div>
+    </body>
+
+</html>
