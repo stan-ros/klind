@@ -8,7 +8,7 @@ function queryData(){
     
     var query = new google.visualization.Query(link);
     var firstRow = 4;
-    var lastRow = 205;
+    var lastRow = 206;
     var queryString = 'SELECT B, I limit '+(lastRow-firstRow+1)+' offset '+(firstRow-2);
     query.setQuery(queryString);
     query.send(drawChart);

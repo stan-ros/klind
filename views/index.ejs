@@ -17,13 +17,13 @@
             <h1 class="text-center">Micex Cleared</h1>
             <table class="params-table">
                 <tr>
-                    <td>Money Amount (mlns):</td>
+                    <td>Сумма инвестирования (млн):</td>
                     <td>
                         <input type="number" step="any" ng-model="moneyAmount" ng-change="updateValues()">
                     </td>
                 </tr>
                 <tr>
-                    <td>Micex Value:</td>
+                    <td>Индекс ММВБ</td>
                     <td>
                         <input type="number" ng-model="lastMicex" ng-change="updateValues()">
                     </td>
@@ -33,42 +33,72 @@
                     <td>{{currentMicexCleared.toFixed(2)}}</td>
                     <td>Micex Cleared Min:</td>
                     <td>
-                        <input type="number" ng-model="MICEX_CLEARED_MIN" disabled ng-change="updateValues()">
+                        <input type="number" ng-model="MICEX_CLEARED_MIN" ng-change="updateValues()">
                     </td>
                 </tr>
                 <tr>
-                    <td>Allowed Multiplier:</td>
+                    <td>Максимальное плечо:</td>
                     <td>{{allowedMultiplier.toFixed(2)}}</td>
                 </tr>
             </table>
-            <h2 class="text-center">Expected Money</h2>
+            <h2 class="text-center">Ожидаемая сумма денег</h2>
             <table class="result-table">
                 <thead>
                     <tr>
-                        <th>Period</th>
-                        <th>Min</th>
-                        <th>Expected</th>
-                        <th>Max</th>
+                        <th>Срок инвестирования</th>
+                        <th>Худший сценарий</th>
+                        <th>Нормальный сценарий</th>
+                        <th>Очень положительный сценарий</th>
                     </tr>    
                 </thead>
                 <tbody>
                     <tr>
-                        <td>6 months</td>
+                        <td>6 месяцев</td>
                         <td>{{currentMicexCleared| micexClear: this: 'min': 6}}</td>
                         <td>{{currentMicexCleared| micexClear: this: 'expected': 6}}</td>
                         <td>{{currentMicexCleared| micexClear: this: 'max': 6}}</td>
                     </tr>       
                     <tr>
-                        <td>12 months</td>
+                        <td>12 месяцев</td>
                         <td>{{currentMicexCleared| micexClear: this: 'min': 12}}</td>
                         <td>{{currentMicexCleared| micexClear: this: 'expected': 12}}</td>
                         <td>{{currentMicexCleared| micexClear: this: 'max': 12}}</td>
                     </tr>       
                     <tr>
-                        <td>24 months</td>
+                        <td>24 месяцев</td>
                         <td>{{currentMicexCleared| micexClear: this: 'min': 24}}</td>
                         <td>{{currentMicexCleared| micexClear: this: 'expected': 24}}</td>
                         <td>{{currentMicexCleared| micexClear: this: 'max': 24}}</td>
+                    </tr>       
+                    <tr>
+                        <td>36 месяцев</td>
+                        <td>{{currentMicexCleared| micexClear: this: 'min': 36}}</td>
+                        <td>{{currentMicexCleared| micexClear: this: 'expected': 36}}</td>
+                        <td>{{currentMicexCleared| micexClear: this: 'max': 36}}</td>
+                    </tr>       
+                    <tr>
+                        <td>48 месяцев</td>
+                        <td>{{currentMicexCleared| micexClear: this: 'min': 48}}</td>
+                        <td>{{currentMicexCleared| micexClear: this: 'expected': 48}}</td>
+                        <td>{{currentMicexCleared| micexClear: this: 'max': 48}}</td>
+                    </tr>       
+                    <tr>
+                        <td>60 месяцев</td>
+                        <td>{{currentMicexCleared| micexClear: this: 'min': 60}}</td>
+                        <td>{{currentMicexCleared| micexClear: this: 'expected': 60}}</td>
+                        <td>{{currentMicexCleared| micexClear: this: 'max': 60}}</td>
+                    </tr>       
+                    <tr>
+                        <td>72 месяцев</td>
+                        <td>{{currentMicexCleared| micexClear: this: 'min': 72}}</td>
+                        <td>{{currentMicexCleared| micexClear: this: 'expected': 72}}</td>
+                        <td>{{currentMicexCleared| micexClear: this: 'max': 72}}</td>
+                    </tr>       
+                    <tr>
+                        <td>80 месяцев</td>
+                        <td>{{currentMicexCleared| micexClear: this: 'min': 80}}</td>
+                        <td>{{currentMicexCleared| micexClear: this: 'expected': 80}}</td>
+                        <td>{{currentMicexCleared| micexClear: this: 'max': 80}}</td>
                     </tr>       
                 </tbody>
             </table>

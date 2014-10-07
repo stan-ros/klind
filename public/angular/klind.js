@@ -6,9 +6,14 @@ app.filter('micexClear', function(){
       var maxMicexCleared = Math.min($scope.MICEX_CLEARED_MAX, $scope.currentMicexCleared * Math.pow($scope.maxSpeedOfGrowth, years));
       /*we expect at two time more slowest growth than max*/
       var expectedMicexCleared =  Math.min(100, $scope.currentMicexCleared * Math.pow($scope.maxSpeedOfGrowth, years / 2)); 
-      console.log(minMicexCleared);
-      console.log(maxMicexCleared);
-      console.log(expectedMicexCleared);
+      if (type == 'expected'){
+          console.log('[MONTHES]'+months);
+          console.log('[TYPE]'+type);
+          
+          console.log(minMicexCleared);
+          console.log(maxMicexCleared);
+          console.log(expectedMicexCleared);
+      }
       switch (type){
           case 'min':
               var indexGrowth = minMicexCleared / $scope.currentMicexCleared * Math.pow(1 + $scope.M2_YEAR_GROWTH_MIN / 100 , years);
@@ -27,14 +32,15 @@ app.filter('micexClear', function(){
 app.controller('MicexClearedCtrl', function($scope) {
     $scope.firstMicex = 101.21;
     $scope.firstM2 = 363;
-    $scope.lastMicex = 1423;
+    $scope.lastMicex = 1475;
     $scope.lastM2 = 30245;
-    $scope.MICEX_CLEARED_MIN = 14;
+    /*we describe by 10% as money amount compress during crisis*/
+    $scope.MICEX_CLEARED_MIN = Math.round(100*12.60 / 1.1)/100;
     $scope.MICEX_CLEARED_MAX = 120;
     $scope.M2_YEAR_GROWTH_MIN = 10;
     $scope.M2_YEAR_GROWTH_MAX = 20;
     $scope.moneyAmount = 10;
-    /*2 mean for one year MicexClearedIndex can be multiple by 2 */
+    /*2 mean for one year MicexClearedIndex can be multiple by 2 at max */
     $scope.maxSpeedOfGrowth = 2;
     $scope.updateValues = function() {
         $scope.currentMicexCleared = 100 * $scope.lastMicex / $scope.lastM2 / ($scope.firstMicex / $scope.firstM2);
