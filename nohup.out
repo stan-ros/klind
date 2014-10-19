@@ -1,0 +1,32 @@
+
+> workspace@0.0.1 start /usr/share/nginx/html/klind
+> node ./bin/www
+
+[90mGET / [36m304 [90m16ms[0m
+[90mGET /css/main.css [36m304 [90m4ms[0m
+[90mGET /js/charts.js [36m304 [90m3ms[0m
+[90mGET /angular/klind.js [36m304 [90m4ms[0m
+[90mGET / [36m304 [90m12ms[0m
+[90mGET /css/main.css [36m304 [90m1ms[0m
+[90mGET /js/charts.js [36m304 [90m1ms[0m
+[90mGET /angular/klind.js [36m304 [90m1ms[0m
+[90mGET / [36m304 [90m1ms[0m
+[90mGET /css/main.css [36m304 [90m0ms[0m
+[90mGET /js/charts.js [36m304 [90m1ms[0m
+[90mGET /angular/klind.js [36m304 [90m1ms[0m
+[90mGET / [36m304 [90m2ms[0m
+[90mGET /css/main.css [36m304 [90m1ms[0m
+[90mGET /js/charts.js [36m304 [90m1ms[0m
+[90mGET /angular/klind.js [36m304 [90m1ms[0m
+[90mGET / [32m200 [90m2ms - 5.45kb[0m
+[90mGET /css/main.css [32m200 [90m3ms - 308b[0m
+[90mGET /angular/klind.js [32m200 [90m1ms - 2.4kb[0m
+[90mGET /js/charts.js [32m200 [90m1ms - 1kb[0m
+[90mGET / [32m200 [90m2ms - 5.45kb[0m
+[90mGET /css/main.css [32m200 [90m1ms - 308b[0m
+[90mGET /js/charts.js [32m200 [90m1ms - 1kb[0m
+[90mGET /angular/klind.js [32m200 [90m1ms - 2.4kb[0m
+[90mGET / [36m304 [90m3ms[0m
+[90mGET /css/main.css [36m304 [90m1ms[0m
+[90mGET /js/charts.js [36m304 [90m1ms[0m
+[90mGET /angular/klind.js [36m304 [90m1ms[0m
